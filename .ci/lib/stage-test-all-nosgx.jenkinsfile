@@ -5,8 +5,10 @@ stage('test') {
         make regression
     '''
     sh '''
+        echo asdf > /dev/kmsg
         cd LibOS/shim/test/regression
         make ${MAKEOPTS} all
+        ./device
         make regression
     '''
     sh '''
